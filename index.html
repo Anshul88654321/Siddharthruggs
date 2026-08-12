@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rug Haven — Handwoven Rugs</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header id="site-header"></header>
+
+  <section class="hero">
+    <h1 id="hero-title">Rug Haven</h1>
+    <p id="hero-tagline">Handwoven rugs for every home</p>
+    <div class="hero-actions">
+      <a href="shop.html" class="btn btn-primary">Shop Rugs</a>
+      <a href="#" id="hero-whatsapp" class="btn btn-whatsapp">Chat on WhatsApp</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Featured Rugs</h2>
+    <div class="product-grid" id="featured-grid"></div>
+  </section>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    renderHeader("home");
+    renderFooter();
+
+    document.getElementById("hero-title").textContent = CONFIG.businessName;
+    document.getElementById("hero-tagline").textContent = CONFIG.tagline;
+    document.getElementById("hero-whatsapp").href =
+      "https://wa.me/" + CONFIG.whatsappNumber;
+
+    // Show first 3 products as "featured"
+    const featured = PRODUCTS.slice(0, 3);
+    document.getElementById("featured-grid").innerHTML = featured
+      .map(
+        (p) => `
+      <div class="product-card">
+        <a href="product.html?id=${p.id}"><img src="${p.image}" alt="${p.name}"></a>
+        <div class="product-card-body">
+          <a href="product.html?id=${p.id}" class="product-name">${p.name}</a>
+          <div class="product-price">${formatPrice(p.price)}</div>
+          <div class="product-size">${p.sizes[0]}</div>
+          <div class="product-card-actions">
+            <a href="product.html?id=${p.id}" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+    `
+      )
+      .join("");
+  </script>
+</body>
+</html>
