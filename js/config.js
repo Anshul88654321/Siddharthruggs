@@ -5,7 +5,7 @@
    ============================================================ */
 
 const CONFIG = {
-  businessName: "Rug Haven",
+  businessName: "Siddharthruggs",
   tagline: "Handwoven rugs for every home",
 
   // WhatsApp number in full international format, digits only
