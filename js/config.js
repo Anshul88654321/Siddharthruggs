@@ -13,6 +13,6 @@ const CONFIG = {
   whatsappNumber: "919876543210",
 
   phone: "+91 98765 43210",
-  email: "hello@rughaven.com",
-  address: "123 Weavers Street, Jaipur, Rajasthan, India",
+  email: "siddharthinternational17@gmail.com",
+  address: "Bhadohi, Uttar Pradesh",
 };
